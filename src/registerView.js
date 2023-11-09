@@ -60,7 +60,8 @@ export default class loginView extends Component {
 
   handleSubmit = () => {
     if (this.validateInput()) {
-      Alert.alert("Bienvenido", " Has iniciado sesión.");
+      Alert.alert("Aviso", " Te has registrado correctamente.");
+      Actions.pop();
     }
   };
   
@@ -68,7 +69,7 @@ export default class loginView extends Component {
   render(){
     return (
       <View style={styles.container}>
-        <Text>Correo</Text>
+        <Text style={styles.textLabel}>Correo</Text>
         <TextInput
           style={styles.textBox}
           onChangeText={(email) => this.setState({email})}
@@ -76,14 +77,14 @@ export default class loginView extends Component {
           placeholder="juanito@gmail.com"
           keyboardType='email-address'
         />
-        <Text>Nombre de usuario</Text>
+        <Text style={styles.textLabel}>Nombre de usuario</Text>
         <TextInput
           style={styles.textBox}
           onChangeText={(user) => this.setState({user})}
           value={this.state.user}
           placeholder="Usuario"
         />
-        <Text>Contraseña</Text>
+        <Text style={styles.textLabel}>Contraseña</Text>
         <TextInput
           style={styles.textBox}
           secureTextEntry={true}
@@ -91,7 +92,7 @@ export default class loginView extends Component {
           value={this.state.password}
           placeholder="contraseña"
         />
-        <Text>Confirmar contraseña</Text>
+        <Text style={styles.textLabel}>Confirmar contraseña</Text>
         <TextInput
           style={styles.textBox}
           secureTextEntry={true}
@@ -128,6 +129,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 1,
     padding: 5,
+    marginTop: 5,
     width: 200,
   },
   button: {
@@ -135,8 +137,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#239B56',
     borderRadius: 5,
   },
-  errorText: {
-    color: '#A93226',
-    marginBottom: 10,
+  textLabel: {
+    marginTop: 5,
   }
 });

@@ -56,7 +56,7 @@ export default class loginView extends Component {
          style={styles.imagen}
          source={require('./assets/img1.jpg')}
         ></Image>
-        <Text>Correo</Text>
+        <Text style={styles.textLabel}>Correo</Text>
         <TextInput
           style={styles.textBox}
           onChangeText={(email) => this.setState({email})}
@@ -64,7 +64,7 @@ export default class loginView extends Component {
           placeholder="juanito@gmail.com"
           keyboardType='email-address'
         />
-        <Text>Contraseña</Text>
+        <Text style={styles.textLabel}>Contraseña</Text>
         <TextInput
           style={styles.textBox}
           secureTextEntry={true}
@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 1,
     padding: 5,
+    marginTop: 5,
     width: 200,
   },
   button: {
@@ -114,8 +115,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#239B56',
     borderRadius: 5,
   },
-  errorText: {
-    color: '#A93226',
-    marginBottom: 10,
+  textLabel: {
+    marginTop: 5,
   }
 });
